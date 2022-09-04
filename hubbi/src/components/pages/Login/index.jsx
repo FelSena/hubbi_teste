@@ -5,6 +5,7 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { ColumnForm } from "./style";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -36,31 +37,30 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <span>Login page</span>
-      <form onSubmit={handleSubmit(onSubmitFunction)}>
-        <TextField
-          label="email"
-          variant="outlined"
-          {...register("email")}
-          required
-          error={!!errors.email}
-          helperText={errors.email?.message}
-        />
-        <TextField
-          label="Senha"
-          variant="outlined"
-          {...register("password")}
-          required
-          error={!!errors.password}
-          helperText={errors.password?.message}
-          type="password"
-        />
-        <button variant="contained" type="submit">
-          Login
-        </button>
-      </form>
-    </div>
+    <ColumnForm onSubmit={handleSubmit(onSubmitFunction)}>
+      <span>hubbi@hubbi.com</span>
+      <span>12345678</span>
+      <TextField
+        label="email"
+        variant="outlined"
+        {...register("email")}
+        required
+        error={!!errors.email}
+        helperText={errors.email?.message}
+      />
+      <TextField
+        label="Senha"
+        variant="outlined"
+        {...register("password")}
+        required
+        error={!!errors.password}
+        helperText={errors.password?.message}
+        type="password"
+      />
+      <Button variant="contained" type="submit">
+        Login
+      </Button>
+    </ColumnForm>
   );
 };
 

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { InformationsContext } from "../providers/InformationsProvider";
 import { useNavigate } from "react-router-dom";
+import { StyledButton } from "./style";
 
 export const Button = ({ item }) => {
   const { setCurrentItem } = useContext(InformationsContext);
@@ -11,5 +12,5 @@ export const Button = ({ item }) => {
     navigate("/informations", { replace: true });
   };
 
-  return <button onClick={handleClick}>Ver Mais</button>;
+  return <StyledButton onClick={handleClick}>Ver Mais</StyledButton>;
 };

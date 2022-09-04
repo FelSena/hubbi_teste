@@ -1,25 +1,11 @@
-import { useEffect, useState } from "react";
-import API from "../../API/API";
-import { Cards } from "../../Cards";
+import PageItems from "../../PageItems";
+import { StarshipsDiv } from "./style";
 
 const Starship = () => {
-  const [starships, setStarships] = useState([]);
-  const [isMouted, setIsMounted] = useState(false);
-
-  console.log(starships);
-  useEffect(() => {
-    API.get("starships").then((res) => {
-      setStarships(res.data.results);
-      setIsMounted(true);
-    });
-  }, []);
-
   return (
-    <div>
-      <span>Starship page</span>
-      {isMouted &&
-        starships.map((item, index) => <Cards key={index} item={item} />)}
-    </div>
+    <StarshipsDiv>
+      <PageItems type="starships" />
+    </StarshipsDiv>
   );
 };
 
