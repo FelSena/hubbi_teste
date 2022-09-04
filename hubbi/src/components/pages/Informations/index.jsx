@@ -1,3 +1,4 @@
+import { Box } from "@mui/material";
 import { useEffect, useState } from "react";
 import InformationsBox from "../../InformationsBox";
 
@@ -7,7 +8,7 @@ const Informations = () => {
   useEffect(() => {
     localStorage.getItem("token") !== null && setAuth(true);
   }, []);
-  return <div>{auth ? <InformationsBox /> : <span>Nao logado</span>}</div>;
+  return <div>{auth ? <InformationsBox /> : <Box> Nao logado</Box>}</div>;
 };
 
 export default Informations;

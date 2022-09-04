@@ -56,9 +56,9 @@ const Login = () => {
           helperText={errors.password?.message}
           type="password"
         />
-        <Button variant="contained" type="submit">
+        <button variant="contained" type="submit">
           Login
-        </Button>
+        </button>
       </form>
     </div>
   );

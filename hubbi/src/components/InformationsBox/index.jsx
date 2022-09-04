@@ -6,7 +6,7 @@ import { InformationsContext } from "../providers/InformationsProvider";
 const InformationsBox = () => {
   const { currentItem } = useContext(InformationsContext);
   const navigate = useNavigate();
-  console.log(currentItem);
+
   useEffect(() => {
     currentItem.name ?? navigate("/", { replace: true });
   }, []);
@@ -15,12 +15,12 @@ const InformationsBox = () => {
       {Object.keys(currentItem)
         .slice(0, 8)
         .map((item, index) => (
-          <>
+          <div>
             <TableRow key={index}>
               <b>{item}</b>
             </TableRow>
             <TableRow>{currentItem[item]}</TableRow>
-          </>
+          </div>
         ))}
     </div>
   );
