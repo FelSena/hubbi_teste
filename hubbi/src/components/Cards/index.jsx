@@ -1,10 +1,11 @@
 import { Button } from "../Button";
+import { StyledCard } from "./style";
 
-export const Cards = ({ item }) => {
+export const Cards = ({ item, color }) => {
   return (
-    <div>
+    <StyledCard color={color}>
       <span>{item.name}</span>
       <Button item={item} />
-    </div>
+    </StyledCard>
   );
 };

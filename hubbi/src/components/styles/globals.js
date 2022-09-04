@@ -28,6 +28,9 @@ export const StyledLink = styled(Link)`
 export const StyledHref = styled.a`
   text-decoration: none;
   color: white;
+  &:hover {
+    color: #ec3137;
+  }
 `;
 
 export const ThemeH3 = styled.h3`
